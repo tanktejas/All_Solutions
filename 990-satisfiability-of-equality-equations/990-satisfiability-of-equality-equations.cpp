@@ -9,18 +9,18 @@ public:
         }
         return parent[ele]=findpar(parent[ele]);
     }
-    
+       
     void makepar(int fir,int sec)
     {
         int par1=findpar(fir),par2=findpar(sec);
         if(size[par1]<size[par2]){
             parent[par1]=par2;
-            size[par2]+=size[par1];
-            size[par1]=0;
+            // size[par2]+=size[par1];
+            // size[par1]=0;
         }else if(size[par1]>=size[par2]){
             parent[par2]=par1;
-            size[par1]+=size[par2];
-            size[par2]=0;
+            // size[par1]+=size[par2];
+            // size[par2]=0;
         } 
     }
     bool equationsPossible(vector<string>& eq) {
@@ -45,7 +45,7 @@ public:
         for(int i=0;i<eq.size();i++){
             string equat=eq[i];
             int n1=equat[0]-'a';
-            int n2=equat[3]-'a';
+            int n2=equat[3]-'a'; 
             char operand=equat[1];
             if(operand=='!'){   
                int parn1=findpar(n1);
