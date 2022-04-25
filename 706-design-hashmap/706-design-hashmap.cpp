@@ -1,7 +1,7 @@
 class MyHashMap {
 public:
     vector<vector<pair<int,int>>>v;
-    int mod=10007;
+    int mod=10006;
     MyHashMap() {
         v.resize(mod);
     }
