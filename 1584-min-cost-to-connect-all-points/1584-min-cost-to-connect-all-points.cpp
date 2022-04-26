@@ -19,9 +19,11 @@ public:
         if(size[par1]<size[par2]){
             par[par1]=par2;
             size[par2]+=size[par1]; 
+            size[par1]=0;
         }else if(size[par1]>=size[par2]){
             par[par2]=par1;
             size[par1]+=size[par2]; 
+            size[par2]=0;
         } 
         
         return ;
