@@ -20,7 +20,7 @@ public:
             par[par1]=par2;
             size[par2]+=size[par1]; 
             size[par1]=0;
-        }else if(size[par1]>=size[par2]){
+        }else {
             par[par2]=par1;
             size[par1]+=size[par2]; 
             size[par2]=0;
