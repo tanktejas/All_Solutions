@@ -64,13 +64,14 @@ class Solution {
     
 public:
     void dfs(vector<vector<int>>& adjList, int x, unordered_set<int>& seen, vector<string>& sets, int seti, unordered_map<int, int>& parentSet, string& s) {
-        if(seen.find(x) != seen.end()) return;
+       
         seen.insert(x);
         sets[seti].push_back(s[x]);
         parentSet[x] = seti;
         auto& children = adjList[x];
         for(auto child : children) {
-            dfs(adjList, child, seen, sets, seti, parentSet, s);
+             if(seen.find(child) == seen.end()) 
+               dfs(adjList, child, seen, sets, seti, parentSet, s);
         }
     }
     
@@ -88,6 +89,7 @@ public:
         unordered_map<int, int> parentSet;
         int seti = 0;
         string newSet;
+        
         for(int i = 0; i <  s.length(); i++) {
             if(seen.find(i) == seen.end()) {
                  newSet = "";
