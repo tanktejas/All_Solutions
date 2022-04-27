@@ -87,10 +87,10 @@ public:
         vector<string> sets;
         unordered_map<int, int> parentSet;
         int seti = 0;
-        
+        string newSet;
         for(int i = 0; i < n; i++) {
             if(seen.find(i) == seen.end()) {
-                string newSet = "";
+                 newSet = "";
                 sets.push_back(newSet);
                 dfs(adjList, i, seen, sets, seti, parentSet, s);
                 seti++;
