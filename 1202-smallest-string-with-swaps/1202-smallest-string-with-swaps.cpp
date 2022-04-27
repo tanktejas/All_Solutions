@@ -76,7 +76,7 @@ public:
     
     string smallestStringWithSwaps(string s, vector<vector<int>>& pairs) {
         int n = s.length();
-        vector<vector<int>> adjList(n);
+        vector<vector<int>> adjList(s.length());
         
         for(auto& pair : pairs) {
             adjList[pair[0]].push_back(pair[1]);
@@ -88,7 +88,7 @@ public:
         unordered_map<int, int> parentSet;
         int seti = 0;
         string newSet;
-        for(int i = 0; i < n; i++) {
+        for(int i = 0; i <  s.length(); i++) {
             if(seen.find(i) == seen.end()) {
                  newSet = "";
                 sets.push_back(newSet);
@@ -102,7 +102,7 @@ public:
         for(auto& thing : sets) {
             sort(thing.begin(), thing.end());
         }
-        for(int i = 0; i < n; i++) {
+        for(int i = 0; i < s.length(); i++) {
             int j = parentSet[i];      
             s[i]  = sets[j][its[j]++];  
         }
