@@ -78,10 +78,10 @@ public:
         int n = s.length();
         vector<vector<int>> adjList(s.length());
         
-        for(auto& pair : pairs) {
-            adjList[pair[0]].push_back(pair[1]);
-            adjList[pair[1]].push_back(pair[0]);
-        }
+        for(int i=0;i<pairs.size();i++) {
+            adjList[pairs[i][0]].push_back(pairs[i][1]);
+            adjList[pairs[i][1]].push_back(pairs[i][0]);
+        } 
         
         unordered_set<int> seen;
         vector<string> sets;
