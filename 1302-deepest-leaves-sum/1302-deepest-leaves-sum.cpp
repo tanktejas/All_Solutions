@@ -11,30 +11,28 @@
  */
 class Solution {
 public:
-    int dolevel(TreeNode* root){
-        queue<TreeNode*>q;
-        q.push(root);
-        q.push(NULL);
-        int sum=root->val;
-        while(q.size()>1){
-            if(q.front()==NULL){
-                q.pop();
-                q.push(NULL);
-                sum=0;
-            }
-            auto a=q.front();
-            q.pop();
-            sum+=a->val;
-            if(a->left){
-                q.push(a->left);
-            }
-            if(a->right){
-                q.push(a->right);
-            }
-        }
-        return sum;
+    void dolevel(TreeNode* root,int &sum,int curr,int &maxh){
+         if(!root) return ;
+        
+         if(curr==maxh){
+             sum+=root->val;
+         }
+         else if(curr > maxh){
+             sum=0;
+             sum=root->val;
+             maxh=curr;
+         }
+        
+        dolevel(root->left,sum,curr+1,maxh);
+        dolevel(root->right,sum,curr+1,maxh);
+        
     }
     int deepestLeavesSum(TreeNode* root) {
-       return  dolevel(root);
+        int currmaxhight=0;
+        int sum=root->val;
+        int currh=0;
+         dolevel(root,sum,currh,currmaxhight);
+        
+        return sum;
     }
 };
