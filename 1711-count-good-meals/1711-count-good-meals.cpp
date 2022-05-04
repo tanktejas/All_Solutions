@@ -9,8 +9,8 @@ public:
          int ans=0;
          for(int i=0;i<d.size();i++){
              for(int j=0;j<=21;j++){
-                if(m.count(v[j]-d[i]))
-                 ans=(ans+(m[v[j]-d[i]]))%1000000007;  
+                if(m.count((v[j]-d[i])))
+                     ans=(ans+(m[v[j]-d[i]]))%1000000007;  
              }
              m[d[i]]++;
          }
