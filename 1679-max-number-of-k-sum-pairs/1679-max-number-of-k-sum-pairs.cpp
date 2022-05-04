@@ -1,14 +1,18 @@
 class Solution {
 public:
     int maxOperations(vector<int>& nums, int k) {
+        sort(nums.begin(),nums.end());
+        int i=0,j=nums.size()-1;
         int ans=0;
-        map<int,int>m;
-        for(int i=0;i<nums.size();i++){
-            if(m[k-nums[i]]){
-                m[k-nums[i]]--;
+        while(i<j){
+            if(nums[i]+nums[j]==k){
+                i++;
+                j--;
                 ans++;
+            }else if(nums[i]+nums[j]<k){
+                i++;
             }else{
-                m[nums[i]]++;
+                j--;
             }
         }
         return ans;
