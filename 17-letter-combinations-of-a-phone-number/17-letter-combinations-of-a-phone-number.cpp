@@ -4,7 +4,7 @@ public:
     vector<string>word={"","","abc","def","ghi","jkl","mno","pqrs","tuv","wxyz"};
     void fun(string num,string temp,int idx){
         
-        if(temp.length()== num.length()){
+        if(idx == num.length()){
             ans.push_back(temp);
             return ;
         }
