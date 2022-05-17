@@ -37,9 +37,7 @@ public:
         }
         adj[1].push_back(0);
         vector<int>vis(n+1,0);
-    
-        // return 1.00;
-        
+     
         if(find(adj,vis,1,t,target,ans))
             return pp;
         else 
