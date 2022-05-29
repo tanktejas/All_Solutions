@@ -15,6 +15,7 @@ public:
                 for(int l=0;l<words[j].size();l++){
                     if(m[words[j][l]]==1){
                         bo=0;
+                        break;
                     }
                 }
               if(bo){
