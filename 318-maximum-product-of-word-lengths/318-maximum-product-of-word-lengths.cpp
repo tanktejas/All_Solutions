@@ -3,6 +3,11 @@ public:
     int maxProduct(vector<string>& words) {
         int ans=0;
         set<char>s;
+        
+        //we can solve using bitmaskig
+        //for that we need to create mask of each string and during traversal we nned to just check if and of two bit mask is zero then no common letter 
+        //it will reduce our time to find common letter.
+        
         int n=words.size();
         for(int i=0;i<n;i++){
             unordered_map<char,int>m; 
