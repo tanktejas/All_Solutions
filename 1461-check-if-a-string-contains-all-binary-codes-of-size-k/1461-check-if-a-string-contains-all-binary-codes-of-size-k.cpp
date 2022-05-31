@@ -4,22 +4,29 @@ public:
         if(s.length()<=k){
             return 0;
         }
-        unordered_map<string,int>m;
-        string win=s.substr(0,k);
-        int cnt=1;
-        reverse(win.begin(),win.end());
-        m[win]++;
-        for(int i=k;i<s.length();i++){
-              win.pop_back();
-              win=s[i]+win;
-           if(m.find(win)==m.end()){
-               cnt++;
-               m[win]++;
-           }
-        
+        int ss=pow(2,k);
+        vector<int>mark(ss,0);
+        int allones=0;
+        for(int i=0;i<k;i++){
+            allones=(allones)|(1<<i);
         }
-        cout<<cnt<<" ";
-        if(cnt>=pow(2,k)){
+        // cout<<allones; 
+        int wind=stoi(s.substr(0,k),0,2);
+        cout<<wind<<" ";
+        int n=s.length();
+        int cnt=1;
+        mark[wind]=1;
+        for(int i=k;i<n;i++){
+            wind=(wind<<1)&(allones);
+            wind|=((s[i]-'0'));
+            // cout<<wind<<" ";
+            if(mark[wind]==0){
+                mark[wind]=1;
+                cnt++;
+            }
+        }
+        
+        if(cnt==ss){
             return 1;
         }
         return 0;
