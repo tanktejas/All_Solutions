@@ -3,6 +3,9 @@ public:
     
     //forula used :- abs(a-b) = { a-b, -(a-b) };
     // and expand full expression and observe.
+    
+    // in this total 8 expression will come out out of 8 there are 4 expression which we have to solve and rest are just negative of previous since we need maximun so avoid those 4 eq. and just need to solve $ eq.
+    
     int maxAbsValExpr(vector<int>& a1, vector<int>& a2) {
         int mx1=INT_MIN,mi1=INT_MAX,mx2=INT_MIN,mi2=INT_MAX,mx3=INT_MIN,mi3=INT_MAX,mx4=INT_MIN,mi4=INT_MAX;
         
