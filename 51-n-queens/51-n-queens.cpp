@@ -1,4 +1,4 @@
-// time complexity :- o(n^3)
+// time complexity :- o(n!)
 // space complexity :- o(n^2)
 
 class Solution {
