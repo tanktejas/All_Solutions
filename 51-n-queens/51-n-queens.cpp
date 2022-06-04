@@ -1,7 +1,11 @@
+// time complexity :- o(n^3)
+// space complexity :- o(n^2)
+
 class Solution {
 public:
     vector<vector<string>>ans;
     vector<string>currans;
+    
     
     bool issafe(int row,int col,int n){
         
@@ -51,7 +55,7 @@ public:
             }
             
         }
-        
+         
     }
     
     vector<vector<string>> solveNQueens(int n) {
