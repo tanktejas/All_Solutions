@@ -4,7 +4,7 @@ public:
    
         if(n==0) return ;
     
-        for(int k=m;k<(m+n);k++){
+        for(int k=m;k<(m+n);k++){       
             nums1[k]=nums2[k-m];
         }
         
