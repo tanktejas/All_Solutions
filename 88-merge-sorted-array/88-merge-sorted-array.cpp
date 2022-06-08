@@ -8,7 +8,7 @@ public:
             nums1[k]=nums2[k-m];
         }
         
-        int gap=(m+n);
+        int gap=(m+n)/2;
         while(gap > 0){
             int i=0;
             for(int i=0;(gap+i)<(n+m);i++){
