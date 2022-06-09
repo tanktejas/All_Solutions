@@ -25,9 +25,10 @@ public:
         
         ans=0;
         
-        for(int i=1;i<n;i++){
-            ans=max(ans,pre[i-1]+suf[i]);
+        for(int i=0;i<n-1;i++){
+            ans=max(ans,pre[i]+suf[i+1]);
         }
+        
         ans=max(ans,max(pre[n-1],suf[0]));
         
         return ans;
