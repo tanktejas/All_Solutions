@@ -28,7 +28,8 @@ public:
             }
         }
            
-        while(i<n and cs>need){
+        
+        while(i<n and cs>=need){
             cs-=nums[i];
             if(cs==need) mw=max(mw,j-i-1);
             i++;
