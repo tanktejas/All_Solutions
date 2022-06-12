@@ -23,8 +23,7 @@ public:
                 }
             }
         }
-        
-        cout<<i;
+         
         return ans;
     }
 };
