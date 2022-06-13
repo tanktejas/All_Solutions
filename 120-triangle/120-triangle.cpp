@@ -1,5 +1,7 @@
 class Solution {
 public:
+    //brute force space o(n*n)
+    
     vector<vector<int>>dp;
     
     int find(vector<vector<int>> &tri,int row,int col,int n){
@@ -18,6 +20,8 @@ public:
         
         return dp[row][col] = maxi;
     }
+    
+    //optimal space o(2*n) => o(n)
     
     int minimumTotal(vector<vector<int>>& tri) {
          int n=tri[tri.size()-1].size();
@@ -45,8 +49,8 @@ public:
         }
         for(int i=0;i<n;i++){
             fa=min(fa,ans[i]);
-        }
-        // cout<<endl;
+        } 
+        
         return fa;
     }
 };
