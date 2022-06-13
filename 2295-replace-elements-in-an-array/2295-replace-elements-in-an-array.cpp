@@ -10,6 +10,7 @@ public:
         for(int i=0;i<op.size();i++){
             int find=op[i][0];
             int idx=m[find];
+            m[op[i][0]]=-1;
             m[op[i][1]]=idx;
             nums[idx]=op[i][1];
         }
