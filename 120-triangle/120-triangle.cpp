@@ -21,9 +21,32 @@ public:
     
     int minimumTotal(vector<vector<int>>& tri) {
          int n=tri[tri.size()-1].size();
+       if(n==1){
+           return tri[0][0];
+       }         
         
-         dp.resize(n,vector<int>(n,-1));
-
-       return find(tri,0,0,n);
+        vector<int>temp;
+        temp.push_back(tri[0][0]);
+        
+        vector<int>ans;
+        int fa=INT_MAX;
+        for(int i=1;i<n;i++){
+            ans.resize(0);
+            ans.push_back(temp[0] + tri[i][0]);
+            
+            for(int j=1;j<temp.size();j++){
+                int tt=min(temp[j],temp[j-1]);
+                ans.push_back(tri[i][j] + tt);  
+               
+            }  
+            
+            ans.push_back(temp[temp.size()-1] + tri[i][tri[i].size()-1]); 
+            temp=ans;
+        }
+        for(int i=0;i<n;i++){
+            fa=min(fa,ans[i]);
+        }
+        // cout<<endl;
+        return fa;
     }
 };
