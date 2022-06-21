@@ -17,9 +17,9 @@ struct cmp1{
 class Solution {
 public:
     vector<int> assignTasks(vector<int>& se, vector<int>& ta) {
-        priority_queue<pair<int,int>,vector<pair<int,int>>,cmp>avai;
+        priority_queue<pair<int,int>,vector<pair<int,int>>,greater<pair<int,int>>>avai;
         
-        priority_queue<pair<int,int>,vector<pair<int,int>>,cmp1>unavai;
+        priority_queue<pair<int,int>,vector<pair<int,int>>,greater<pair<int,int>>>unavai;
         int m=se.size();
         int n=ta.size();
         vector<int>ans(n);
