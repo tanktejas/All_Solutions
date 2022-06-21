@@ -14,6 +14,10 @@ struct cmp1{
    }  
 };
 
+// we just doing simulation of what we have been given just maintaining two priority queue (available and unavailable ) and at each point check available queue and assign task that's what we are doing.
+
+
+
 class Solution {
 public:
     vector<int> assignTasks(vector<int>& se, vector<int>& ta) {
