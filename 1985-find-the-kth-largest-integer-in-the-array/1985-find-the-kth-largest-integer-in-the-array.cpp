@@ -1,8 +1,9 @@
 class Solution {
 public:
     string kthLargestNumber(vector<string>& nums, int k) {
-        
+         
         auto cmp=[&](int a,int b){
+    
             if(nums[a].length() < nums[b].length()){
                 return 0;
             }
@@ -16,7 +17,7 @@ public:
             }
             
             return 0;
-        };
+        }; 
         
         priority_queue<int,vector<int>,decltype(cmp)>q(cmp);
         
@@ -26,8 +27,7 @@ public:
             if(q.size()<k){
                 q.push(i);
             }else{
-                q.push(i);
-                cout<<nums[q.top()]<<" ";
+                q.push(i); 
                 q.pop();
             }
         }
