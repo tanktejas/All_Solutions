@@ -9,35 +9,30 @@
  */
 class Solution {
 public:
-    TreeNode* lca;
     
-    bool find(TreeNode* root,TreeNode* p,TreeNode* q){
+    
+    TreeNode* find(TreeNode* root,TreeNode* p,TreeNode* q){
         if(!root) return 0;
         
-        if(!root->left and !root->right) return (p->val==root->val or q->val==root->val);
-        
-       bool l=find(root->left,p,q);
-       bool r=find(root->right,p,q);
-        
+        if(root == q or root == p){
+            return root; 
+        }
+       
+       TreeNode* l=find(root->left,p,q);
+       TreeNode* r=find(root->right,p,q);
+       
         if(l and r){
-            lca=root;
-            return 0;
-        }else if((l and (root->val==p->val or root->val==q->val)) or (r and (root->val==p->val or root->val==q->val))){
-            lca=root;
-            return 0;
-        }  
-        if(root->val==5){
-            cout<<l<<' '<<r;
+            return root;
         }
         
-        if(root->val==p->val or root->val==q->val) return 1;
-        
-        return l or r;
-        
+      if(l or r){
+          return l ? l : r;
+      }
+      
+        return NULL;
     }
     
     TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
-            find(root,p,q);
-        return lca;
+        return  find(root,p,q); 
     }
 };
