@@ -6,7 +6,7 @@ public:
       int n=tar.size();
         long long sum=0;
      
-      priority_queue<int>q;
+      priority_queue<long long>q;
         
       for(int i=0;i<n;i++){
            q.push(tar[i]);      
@@ -20,9 +20,8 @@ public:
           
           if(ele==1) continue;
               
-          
-          if(sum==ele or (ele<=(sum-ele))) return 0;
-          
+          if(ele==(sum) or ((ele)-(sum-ele))<=0) return 0;
+        
            int add=sum-ele;
            int mod=ele%add;  
           // int add=ele%sum;
