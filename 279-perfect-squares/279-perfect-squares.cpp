@@ -20,14 +20,19 @@ public:
     }
       
     int numSquares(int n) {
+      dp=vector<long long>(n+1,INT_MAX);
         for(int i=1;i*i<=n;i++){
+            dp[i*i]=1;
             sq.push_back(i*i);  
         } 
-        
-        dp=vector<long long>(n+1,INT_MAX);
-        find(0,n);
-        
-        for(int i=0;i<=n;i++) cout<<dp[i]<<' ';
+         
+        for(int i=1;i<=n;i++){
+            for(int j=0;j<sq.size();j++){   
+                if((i-sq[j]) >= 0){
+                    dp[i]=min(dp[i],1 + dp[i-sq[j]]);
+                }
+            }
+        }
         
         return dp[n];
     } 
