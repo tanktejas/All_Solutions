@@ -42,8 +42,7 @@ public:
         int s=0;
         for(int i=0;i<n;i++){
             s+=v[i]; 
-        }
-        cout<<endl;
+        } 
         return s;
     }
 };
