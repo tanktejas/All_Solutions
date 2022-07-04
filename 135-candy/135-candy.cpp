@@ -11,9 +11,7 @@ public:
         for(int i=0;i<n;i++){
              q.push({r[i],i});
         }
-        
-       
-        
+         
         while(!q.empty()){
             auto ele=q.top();
             q.pop();
@@ -35,17 +33,15 @@ public:
                   mm=max(mm,v[ele.second-1]);
                 if(r[ele.second+1] < ele.first)
                  mm=max(mm,v[ele.second+1]);
-                 
-                 
-                    v[ele.second]=1+mm; 
+                  
+                 v[ele.second]=1+mm; 
             
             }
         }   
         
         int s=0;
         for(int i=0;i<n;i++){
-            s+=v[i];
-            cout<<v[i]<<" ";
+            s+=v[i]; 
         }
         cout<<endl;
         return s;
