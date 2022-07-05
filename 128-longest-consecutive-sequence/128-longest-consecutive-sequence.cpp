@@ -37,8 +37,7 @@ public:
                  makeuni(nums[i],nums[i]-1);   
               }     
               if(par.find(nums[i]+1)!=par.end()){
-                  makeuni(nums[i],nums[i]+1);
-                  if(i==4) cout<<siz[3];
+                  makeuni(nums[i],nums[i]+1); 
               } 
           }
        
