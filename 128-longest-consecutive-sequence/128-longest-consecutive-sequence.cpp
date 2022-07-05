@@ -17,11 +17,11 @@ public:
         if(siz[p1] <= siz[p2]){
             par[p1]=par[p2]; 
             siz[p2]+=siz[p1];
-            // siz[p1]=0;
+            siz[p1]=0;
         }else if(siz[p2] < siz[p1]){
             par[p2]=par[p1];
             siz[p1]+=siz[p2];
-            // siz[p2]=0;
+            siz[p2]=0;
         }
     }
      
