@@ -1,5 +1,9 @@
-class Solution {
-public:
+
+  
+ class DSU{
+    
+   public: 
+     
     unordered_map<int,int>par;    
     unordered_map<int,int>siz;
     
@@ -24,31 +28,41 @@ public:
             siz[p2]=0;
         }
     }
-     
+ };
+
+class Solution {
+public: 
+    
     int longestConsecutive(vector<int>& nums) {
           int n=nums.size();  
+          DSU obj;
+        
           for(int i=0;i<n;i++){
              
-              if(par.find(nums[i])==par.end()){
-                par[nums[i]]=nums[i];
-                siz[nums[i]]++;
+              if(obj.par.find(nums[i])==obj.par.end()){
                   
-              if(par.find(nums[i]-1)!=par.end()){
-                 makeuni(nums[i],nums[i]-1);   
+                obj.par[nums[i]]=nums[i];
+                obj.siz[nums[i]]++;
+                  
+              if(obj.par.find(nums[i]-1)!=obj.par.end()){
+                 obj.makeuni(nums[i],nums[i]-1);   
               }     
-              if(par.find(nums[i]+1)!=par.end()){
-                  makeuni(nums[i],nums[i]+1); 
-              } 
-          }
+              if(obj.par.find(nums[i]+1)!=obj.par.end()){
+                  obj.makeuni(nums[i],nums[i]+1); 
+              }
+                  
+           }
        
           }   
         
            int mx=0;
               for(int i=0;i<n;i++){
-                  mx=max(mx,siz[nums[i]]);
+                  mx=max(mx,obj.siz[nums[i]]);
               }  
       
          return mx;
           
     }
 };
+
+ 
