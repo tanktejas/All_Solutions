@@ -1,8 +1,7 @@
 class Solution {
 public:
     vector<int>ans; 
-     
-    
+      
     bool find(int idx,vector<int> &tmp,string str){
         if(tmp.size()>=3){ 
             int n=tmp.size()-1; 
@@ -14,8 +13,7 @@ public:
         
         if(idx==str.length()){
             if(tmp.size()>2){
-              ans=tmp;
-              // cout<<idx<<" "<<tmp.size()<<endl;
+              ans=tmp; 
               return 1;
            }
             return 0;  
@@ -31,8 +29,7 @@ public:
         for(int i=idx;(i-idx+1)<=10 and i<str.length() ;i++){  
             
                    string chosen=str.substr(idx,(i-idx+1)); 
-                   long long rr=stoll(chosen); 
-                   cout<<chosen<<" "<<rr<<' '<<endl;  
+                   long long rr=stoll(chosen);  
                    tmp.push_back(rr);
                    if(find(i+1,tmp,str)){
                          return 1;
