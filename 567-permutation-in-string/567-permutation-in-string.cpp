@@ -37,8 +37,7 @@ public:
             
              for(int h=0;h<26;h++){
                  v[j][h]=v[j-1][h];
-             }
-              // return 0;
+             } 
              v[j][s2[j]-'a']++;
              
               bool is=1;
