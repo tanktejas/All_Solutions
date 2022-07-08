@@ -1,6 +1,6 @@
 // class Solution {
 // public:
-//     int dp[23][106][106]; 
+//     int dp[103][23][103]; 
 //     vector<int>h;
 //     vector<vector<int>>co;
 //     int no;
@@ -63,9 +63,9 @@
 //            h=houses;
 //            co=cost;
         
-//           for(int i=0;i<22;i++){
-//               for(int j=0;j<102;j++){
-//                   for(int k=0;k<102;k++){
+//           for(int i=0;i<103;i++){
+//               for(int j=0;j<23;j++){
+//                   for(int k=0;k<103;k++){
 //                       dp[i][j][k]=-2;
 //                   }
 //               }
@@ -81,7 +81,7 @@
 int n;
 vector<int> houses;
 vector<vector<int>> cost;
-vector<vector<vector<int>>> dp;
+int dp[105][24][103];
 int c;
 int rec(int i, int last, int target) {
     // Pruning
@@ -154,12 +154,12 @@ public:
         houses=house;
         c=col;
         n=r;
-		dp.resize(n+1);
-        for(int i=0;i<=n;i++) {
-            dp[i].resize(n+1);
-            for(int j=0;j<=n;j++) {
-                dp[i][j].resize(target+1);
-                for(int k=0;k<=target;k++) {
+		// dp.resize(n+1);
+        for(int i=0;i<103;i++) {
+            // dp[i].resize(n+1);
+            for(int j=0;j<23;j++) {
+                // dp[i][j].resize(target+1);
+                for(int k=0;k<103;k++) {
                     dp[i][j][k]=-2;
                 }
             }
@@ -170,3 +170,4 @@ public:
         // return -1;
     }
 };
+
