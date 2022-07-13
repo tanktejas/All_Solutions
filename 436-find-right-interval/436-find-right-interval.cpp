@@ -18,9 +18,7 @@ public:
             ind[i]=t[i][2];
             start[i]=t[i][0];
             
-        }
-        
-        // for(int i=0;i<start.size();i++) cout<<start[i]<<" ";  
+        } 
                                                     
         for(int i=0;i<n;i++){
             int ele=in[i][1];
