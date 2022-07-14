@@ -29,17 +29,10 @@ class Solution {
 public:
     bool canReorderDoubled(vector<int>& arr) {
         sort(arr.begin(),arr.end(),cmp);
-    
-        for(int i=0;i<arr.size();i++) cout<<arr[i]<<" ";
-        
+      
         bool bo=1;
         int n=arr.size();
-        
-//         for(int i=0;i<n;i+=2){ 
-//              if((2*arr[i]) != arr[i+1]) bo=0;
-//         }
-         
-        
+ 
         //hashing logic 
         
           map<int,int>m;
