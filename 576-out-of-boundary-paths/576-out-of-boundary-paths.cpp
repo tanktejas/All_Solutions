@@ -3,8 +3,7 @@ public:
     
     // we don't need to take visited array because our dp state is j,j,k so if we reach ith row and jth olumn then it doen't mean that we don't need to go there in fact we nned to go there because our k is affacted which is number of moves right so our state is i...j...k.
     
-    int dp[51][51][51];
-    int vis[51][51];
+    int dp[51][51][51]; 
     int dx[4]={0,-1,0,1};
     int dy[4]={-1,0,1,0};
     int mod=1000000007;
