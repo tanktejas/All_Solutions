@@ -23,20 +23,8 @@ public:
             
              int prev=0;
             
-             // if(nx!=mm and nx!=-1 and ny!=nn and ny!=-1)
-             // {
-             //     prev=vis[nx][ny];
-             //     if(prev==0)  
-             //       vis[nx][ny]=1;
-             // } 
-            
-            // if(prev==0){ 
               way=(way + find(nx,ny,rm-1))%mod; 
-            // }
-            
-             // if(nx!=mm and nx!=-1 and ny!=nn and ny!=-1)
-             //     if(prev==0) 
-             //       vis[nx][ny]=0; 
+          
          
         }
           
@@ -45,12 +33,10 @@ public:
     }
     
     int findPaths(int m, int n, int maxMove, int s, int e) {
-         memset(dp,-1,sizeof(dp));
-         // memset(vis,0,sizeof(vis));
+         memset(dp,-1,sizeof(dp)); 
         
          mm=m;
-         nn=n;
-        // vis[s][e]=1;
+         nn=n; 
     
         return find(s,e,maxMove); 
           
