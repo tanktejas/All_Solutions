@@ -68,8 +68,7 @@ public:
             int p1=dsu.findpar(edges[i][0]);
             int p2=dsu.findpar(edges[i][1]);
             
-            if(p1==p2){
-                cout<<prev;
+            if(p1==p2){ 
                 if(prev!=-1){
                     return {edges[prev][0],edges[prev][1]};
                 }else{
