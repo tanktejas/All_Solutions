@@ -1,6 +1,6 @@
 class Solution {
 public:
-    unordered_map<string,vector<string>>adj;
+    map<string,vector<string>>adj;
     map<pair<string,string>,int>vis;
     vector<string>ans,ans1;
     
@@ -17,12 +17,12 @@ public:
         
         for(auto ele:adj[so])
         {
-            if(vis.find({so,ele})!=vis.end())
+            if(vis[{so,ele}]!=0)
             {
                      vis[{so,ele}]--;
-                     if(vis[{so,ele}]==0) vis.erase({so,ele});
+                     // if(vis[{so,ele}]==0) vis.erase({so,ele});
                      ans.push_back(ele);
-                     if(dfs(ele,n)) return 1;
+                     if(dfs(ele,n)) return 1;  
                      ans.pop_back(); 
                      vis[{so,ele}]++; 
             }
