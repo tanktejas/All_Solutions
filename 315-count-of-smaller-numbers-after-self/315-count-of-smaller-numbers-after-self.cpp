@@ -7,8 +7,7 @@ public:
          int n=(m-s+1),mo=(e-m); 
          
         int i=s,j=m+1;
-        int k=0;
-        int cnt=0;
+        int k=0; 
         
         vector<pair<int,int>>u(n+mo);
         
@@ -18,7 +17,7 @@ public:
                 ans[nums[i].second]+=(j-m-1);
                 i++; 
             }else{  
-                cnt++;
+                // cnt++;
                 u[k]=nums[j];
                 j++;
             } 
@@ -65,9 +64,7 @@ public:
            }
           ans.resize(n,0);
           mrg(0,n-1,pp);  
-        
-         for(int i=0;i<n;i++) cout<<nums[i]<<" ";
-        
+          
         return ans;
     }
 };
