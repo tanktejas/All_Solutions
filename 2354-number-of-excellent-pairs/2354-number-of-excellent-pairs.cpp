@@ -21,10 +21,10 @@ public:
         
         // for(int i=0;i<n;i++) cout<<stbit[i]<<" ";
         
-        for(int i=0;i<=70;i++)
+        for(int i=0;i<=31;i++)
         {
             
-            for(int j=0;j<=70;j++)
+            for(int j=0;j<=31;j++)
             {
                 if((i+j) >= k)
                 {
