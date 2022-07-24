@@ -21,12 +21,12 @@ public:
         
         // for(int i=0;i<n;i++) cout<<stbit[i]<<" ";
         
-        for(int i=0;i<=31;i++)
+        for(int i=0;i<=30;i++)
         {
             
-            for(int j=0;j<=31;j++)
+            for(int j=0;j<=30;j++)
             {
-                if((i+j) >= k)
+                if((i+j) >= k) 
                 {
                     cnt+=(1LL * stbit[i] * stbit[j]);
                 }
