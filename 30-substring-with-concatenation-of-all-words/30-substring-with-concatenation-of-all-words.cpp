@@ -8,9 +8,7 @@ public:
         int len=s.length();
 
         for(int i=0;i<n;i++) m[words[i]]++;
-        
-        cout<<(len-(one*n));
-        
+         
         for(int i=0;i<=(len-(one*n));i++)
         {
              unordered_map<string,int>mp=m;
@@ -27,7 +25,7 @@ public:
                      
                      mp[curr]--;
                      if(mp[curr]==0) levai++;
-                     
+ 
                  }
                  
              } 
