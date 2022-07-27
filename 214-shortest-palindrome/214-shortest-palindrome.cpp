@@ -15,8 +15,7 @@ public:
             }
             
             ans[i]=j;
-        }
-        for(int i=0;i<n;i++) cout<<ans[i]<<' ';
+        }  
         
         return ans;
     }
@@ -34,8 +33,7 @@ public:
         vector<int>dd=find(aa);
         int start= dd[(2*n)];
        
-        if(start==((2*n)-1)) return gg;
-        // cout<<start;
+        if(start==((2*n)-1)) return gg; 
          
         string hh=gg.substr(start);
         reverse(hh.begin(),hh.end());
