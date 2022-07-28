@@ -29,8 +29,7 @@ public:
                  if(rn[s[j]] < fi[s[j]]) noofdi++;  
                  rn[s[j]]++;
                  j++;
-             }  
-            cout<<i<<' '<<j<<" "<<noofdi<<endl;
+             }   
         }
         
         if(noofdi == m) ans.push_back(i);
