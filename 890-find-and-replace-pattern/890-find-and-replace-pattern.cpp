@@ -26,6 +26,7 @@ public:
                 
               while(pi<pn and ci<pn)
               {
+                  
                   char oo=pattern[pi],pp=curr[ci];
                   while(pi<pn and pattern[pi]==oo) pi++;
                   while(ci<pn  and curr[ci]==pp) ci++;
