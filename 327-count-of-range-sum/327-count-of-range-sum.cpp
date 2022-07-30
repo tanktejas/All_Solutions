@@ -53,12 +53,12 @@ public:
             long long i=s,j=mid+1;
             
             while(i<=mid and j<=e){
-                if((nums[j]-nums[i]) >= lo)
+                if((nums[j]-nums[i]) <= lo)
                 {
-                    ans+=(e-j+1);
-                    i++;
-                }else{
+                    ans+=(mid-i+1);
                     j++;
+                }else{
+                    i++;
                 }
             }
             
@@ -82,15 +82,15 @@ public:
         
         long long ans=0,ans1=0;
         
-        for(auto it:pre) if(it>=lower) ans++;
+        for(auto it:pre) if(it<lower) ans++;
         
-        mrg(0,n-1,pre,lower,ans);
+        mrg(0,n-1,pre,lower-1,ans);
         
-        for(auto it:pre) if(it>upper) ans1++;
+        for(auto it:pre) if(it<=upper) ans1++;
         
-        mrg(0,n-1,pre1,upper+1,ans1);
+        mrg(0,n-1,pre1,upper,ans1);
         
-        return ans-ans1;
+        return ans1 - ans;
         
     }
 };
