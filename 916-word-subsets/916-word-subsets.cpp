@@ -25,12 +25,7 @@ public:
             }
              
         }
-        
-//         for(int i=0;i<26;i++)
-//         {
-//             cout<<(char)('a'+i)<<" "<<v[i]<<endl;
-//         }
-        
+         
         vector<string>ans;
         vector<int>curr(27);
         
@@ -54,14 +49,7 @@ public:
                     bo=0;
                 }
             } 
-            
-        // for(int i=0;i<26;i++)
-        // {
-        //     cout<<(char)('a'+i)<<" "<<curr[i]<<"  ";
-        // }
         
-            // cout<<endl;
-            
             if(bo) ans.push_back(w1[i]);            
         }
         
