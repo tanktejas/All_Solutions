@@ -1,6 +1,6 @@
 class Solution {
 public:
-    int ans=0;
+    long long ans=0;
     
     void slv(int &s,int &m,int &e,vector<int> &nums)
     {
@@ -15,22 +15,18 @@ public:
         while(ti<=m and tj<=e)
         {  
             long long oo=(1LL*2*nums[tj]);
-             if(nums[ti] > 1LL*oo){
-                 ans+=(ti-s);  
-                 tj++;   
+             if(nums[ti] <= 1LL*oo){
+                 ans+=(tj-m-1);  
+                 ti++;   
             }else{    
-                ti++;
+                tj++;
             } 
         }
         
         while(ti<=m){  
+            ans+=(tj-m-1);
             ti++;
         }
-         
-        while(tj<=e){  
-              ans+=(ti-s);
-              tj++; 
-        } 
         
         while(i<=m and j<=e){  
             if(nums[i] <=nums[j] ){
@@ -79,7 +75,7 @@ public:
         
          int n=nums.size();
         
-         ans=((1LL*n*(n-1))/2) - ans;
+         // ans=((1LL*n*(n-1))/2) - ans;
           
          return ans; 
     }
