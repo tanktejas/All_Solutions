@@ -12,24 +12,13 @@ public:
      if(dp[i][j]!=-1) return dp[i][j];
     
      int curr=0;
-    
-     if(turn == 0)
-     {
+ 
          
-        int pick0=(pre[j-1]-pre[i-1] - find(i,j-1,1));
+        int pick0=(pre[j-1]-pre[i-1] - find(i,j-1,1));  // opponent will try to minimize diffrence by taking his diffrence maximum.
         int pick1=(pre[j]-pre[i] - find(i+1,j,1));
         
         dp[i][j]=max(pick0 , pick1);
-         
-     }else{
-         
-        int pick0=((pre[j-1]-pre[i-1]) - find(i,j-1,0));
-        int pick1=((pre[j]-pre[i]) - find(i+1,j,0));  
-        
-        dp[i][j]=max(pick0 , pick1);
-         
-     }
-         
+          
     return dp[i][j];
   }
     
