@@ -16,17 +16,17 @@ public:
      if(turn == 0)
      {
          
-        int pick0=(pre[j-1]-pre[i-1] + find(i,j-1,1));
-        int pick1=(pre[j]-pre[i] + find(i+1,j,1));
+        int pick0=(pre[j-1]-pre[i-1] - find(i,j-1,1));
+        int pick1=(pre[j]-pre[i] - find(i+1,j,1));
         
         dp[i][j]=max(pick0 , pick1);
          
      }else{
          
-        int pick0=(find(i,j-1,0) - (pre[j-1]-pre[i-1]));
-        int pick1=(find(i+1,j,0) - (pre[j]-pre[i]));  
+        int pick0=((pre[j-1]-pre[i-1]) - find(i,j-1,0));
+        int pick1=((pre[j]-pre[i]) - find(i+1,j,0));  
         
-        dp[i][j]=min(pick0 , pick1);
+        dp[i][j]=max(pick0 , pick1);
          
      }
          
