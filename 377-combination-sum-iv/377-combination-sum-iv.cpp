@@ -19,13 +19,13 @@ public:
        return dp[n]=wa;
     
     }        
-
+         
     int combinationSum4(vector<int>& nums, int tar) {
         int n=nums.size();
         arr=nums;
         dp.resize(tar+1,-1);
         
-        sort(nums.begin(),nums.end());
+        // sort(nums.begin(),nums.end());
         
         int ele= find(tar); 
          
