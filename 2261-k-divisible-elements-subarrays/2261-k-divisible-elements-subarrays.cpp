@@ -1,7 +1,7 @@
 class Solution {
 public:
     int countDistinct(vector<int>& nums, int k, int p) {
-        int key=211;  
+        int key=201;  
         map<unsigned long long,unsigned long long>mp;
         int n=nums.size();
         unsigned long long curr=0; 
