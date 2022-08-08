@@ -4,7 +4,7 @@ public:
         int key=201;    
         map<unsigned long long,unsigned long long>mp;
         int n=nums.size();
-        unsigned long long curr=0; 
+         long long curr=0; 
         unsigned long long divi=0;
         int ans=0;
         
