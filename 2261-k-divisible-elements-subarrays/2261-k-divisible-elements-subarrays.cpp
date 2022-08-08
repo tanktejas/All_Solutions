@@ -4,14 +4,14 @@ public:
         int key=201;    
         map<unsigned long long,unsigned long long>mp;
         int n=nums.size();
-         long long curr=0; 
-        unsigned long long divi=0;
+        long long curr=0; 
+        long long divi=0;
         int ans=0;
         
         for(int i=0;i<n;i++)
         {
             curr=0;  
-            unsigned long long yy=key;
+            unsigned long long yy=key; 
             divi=0;  
             for(int j=i;j<n;j++)
             { 
@@ -23,8 +23,8 @@ public:
                     ans++;   
                     mp[curr]=1;
                 }   
-            } 
-            // cout<<ans<<" "; 
+            }  
+            
         }
         return ans;
     }
