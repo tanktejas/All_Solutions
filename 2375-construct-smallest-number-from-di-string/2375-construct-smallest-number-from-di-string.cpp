@@ -21,8 +21,8 @@ public:
                 s.push(i+1);
             } 
         }
-        
-         ans+=(to_string(pat.length()+1));
+    
+        ans+=(to_string(pat.length()+1));
         if(!s.empty()){     
          while(!s.empty()){
               ans+=to_string(s.top());
