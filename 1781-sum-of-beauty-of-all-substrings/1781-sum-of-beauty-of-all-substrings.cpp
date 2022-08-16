@@ -4,10 +4,13 @@ public:
         int n=s.length(); 
         int ans=0;
         
+        
+         vector<int>pre(26,0); 
+        
         for(int i=0;i<n;i++)
         {
-             vector<int>pre(26,0); 
-            
+            pre.clear(); 
+            pre.resize(26,0);
             for(int j=i;j<n;j++)
             {
                 
@@ -15,7 +18,7 @@ public:
                   pre[s[j]-'a']++;
                 
                  for(int k=0;k<26;k++)
-                 {
+                 {     
                      if(pre[k]==0) continue;
                       mini=min(mini,pre[k]);   
                       maxi=max(maxi,pre[k]);  
