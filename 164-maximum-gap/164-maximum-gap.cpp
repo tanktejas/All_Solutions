@@ -64,6 +64,7 @@ public:
             tillwhen++;
             maxi/=10;
         }  
+        
         int curr=0;  
         
         while(curr<tillwhen)
