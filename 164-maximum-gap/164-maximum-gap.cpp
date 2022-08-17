@@ -58,12 +58,12 @@ public:
             maxi=max(maxi,nums[i]);
         }
         
-        int tillwhen=0;
-        while(maxi)
-        {
-            tillwhen++;
-            maxi/=10;
-        }  
+        int tillwhen=10;
+        // while(maxi)
+        // {
+        //     tillwhen++;
+        //     maxi/=10;
+        // }  
         
         int curr=0;  
         
