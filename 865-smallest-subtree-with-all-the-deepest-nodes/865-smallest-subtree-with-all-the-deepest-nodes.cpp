@@ -20,7 +20,10 @@ public:
     {  
         if(cd>mxdep){
             mxdep=cd; 
-        } 
+            howmany=1;
+        }else if(cd==mxdep){
+            howmany++;
+        }
         
         if(!root) return ;
         
@@ -29,18 +32,7 @@ public:
         
     }
     
-     void abc(TreeNode* root,int cd)
-    {  
-        if(cd==(mxdep)){  
-            howmany++;   
-        } 
-          
-        if(!root) return ;
-         
-        abc(root->left,cd+1);
-        abc(root->right,cd+1);
-        
-    }
+  
     
     int collect(TreeNode* root,int cd)
     {
@@ -65,8 +57,7 @@ public:
     }
     
     TreeNode* subtreeWithAllDeepest(TreeNode* root) {
-        finddist(root,0);  
-        abc(root,0);
+        finddist(root,0);   
         collect(root,0);
         
         return ans;
