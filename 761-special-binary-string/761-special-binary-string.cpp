@@ -31,11 +31,9 @@ public:
         
         string str="";  
         for(int i=0;i<v.size();i++)
-        {     
-            cout<<v[i]<<' ';
+        {      
             str+=v[i];
-        }    
-        cout<<endl;
+        }     
         
         return str;
         
