@@ -17,30 +17,17 @@ public:
              string curr=dic[i];
              int len=curr.length();
             
-//              if(len > n or len < ans.length()){
-//                  continue;
-//              }
-             
-             int start=-1;   
-             bool bo=1;
-             for(int i=0;i<len;i++)
+             int start=0;
+             int j;
+             for(j=0;j<len and start<n;start++)
              {
-                 int j=0;
-                 int pp=v[curr[i]-'a'].size();
-                 while(j<pp and v[curr[i]-'a'][j] <= start)
-                 {
-                     j++;
-                 }
-                 
-                 if(j>=pp)
-                 {
-                    bo=0;
-                 }else{
-                    start=v[curr[i]-'a'][j];
-                 } 
+                   if(s[start]==curr[j]){
+                        j++;
+                   } 
              }
-             if(bo)
-             {
+            
+             if(j==len){
+                 
                  if(ans.size() < len)
                  {
                      ans=curr;
@@ -51,7 +38,9 @@ public:
                          ans=curr;
                      }
                  }
+                
              }
+            
         }
         
         return ans;
