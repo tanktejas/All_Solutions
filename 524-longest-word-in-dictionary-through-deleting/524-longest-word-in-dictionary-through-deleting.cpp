@@ -17,9 +17,9 @@ public:
              string curr=dic[i];
              int len=curr.length();
             
-             if(len > n or len < ans.length()){
-                 continue;
-             }
+//              if(len > n or len < ans.length()){
+//                  continue;
+//              }
              
              int start=-1;   
              bool bo=1;
