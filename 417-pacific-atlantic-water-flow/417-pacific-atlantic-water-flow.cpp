@@ -71,14 +71,14 @@ public:
         for(int i=0;i<n;i++)
         { 
             
-               vis[i][m-1]++; 
+                vis[i][m-1]++; 
                 q.push({i,m-1}); 
              
         }
         
         for(int i=0;i<m-1;i++)
         {       
-             vis[n-1][i]++;   
+              vis[n-1][i]++;   
                q.push({n-1,i});  
         }
      
@@ -119,9 +119,7 @@ public:
                 }
             }
         }
-        
-        
-        
+         
         return ans;
         
     }
