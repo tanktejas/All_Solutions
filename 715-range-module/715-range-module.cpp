@@ -44,6 +44,7 @@ bool update(Node *node, int left, int right, bool state) // update [left,right) 
    if (left <= (node->start) && (node->end) <= right)
    {
       node->state = state;
+             node->lazy = state;
       // lazy operation
       if (node->left)
       {
@@ -83,7 +84,7 @@ bool query(Node *node, int left, int right)
    // target in the intersection if the node is active
    // reach the leaf, if node is active then the part of [left, right) is active
    if ((left <= (node->start) && (node->end) <= right) || !(node->left))
-      return node->state;
+      return node->state;  
    // part of of [left, right) in node
    return query(node->left, left, right) && query(node->right, left, right);
 }
