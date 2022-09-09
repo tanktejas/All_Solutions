@@ -3,15 +3,14 @@ public:
     int numberOfWeakCharacters(vector<vector<int>>& pro) {
         sort(pro.begin(),pro.end(),greater<vector<int>>());
         int n=pro.size();
-        priority_queue<int>p;
+        int maxi=-1e9;
         vector<int>hj;
         int cnt=0;
          
         for(int i=0;i<n;)
         {
-             int ele=pro[i][0];
-             hj.clear();
-             int tp=p.size() ? p.top() : -1e9;  
+             int ele=pro[i][0]; 
+             int tp=maxi;  
               
         
              while(i<n and ele == pro[i][0])
@@ -22,16 +21,11 @@ public:
                      cnt++;
                  }  
                  
-                 hj.push_back(pro[i][1]);
+                 maxi=max(maxi,hh);
+                  
                  i++;  
              }
-            
-            int yy=hj.size();
-            for(int l=0;l<yy;l++)
-            {
-                p.push(hj[l]);
-            }
-            
+             
         }
         return cnt;
     }
