@@ -56,11 +56,11 @@ public:
          memset(dp,-1,sizeof(dp));
         
           int maxpro=0;
-           find(0,k,n);
-          for(int i=0;i<n;i++)
-          {
-              maxpro=max(maxpro,dp[i][k]);
-          } 
+           maxpro=find(0,k,n);
+//           for(int i=0;i<n;i++)
+//           {
+//               maxpro=max(maxpro,dp[i][k]);
+//           } 
           
           return maxpro; 
     }
