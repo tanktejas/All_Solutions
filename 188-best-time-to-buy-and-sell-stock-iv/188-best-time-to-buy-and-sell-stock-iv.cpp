@@ -31,36 +31,14 @@ public:
               
         if(pri.size()==0) return 0;  
         int n=pri.size();
-     
-//         for(int i=1;i<n;i++)
-//         {
-//             if(pri[i]<pri[i-1]){
-//                 tot.push_back(pri[i-1]-f);
-//                 f=pri[i];
-//             }
-//         }
-         
-//           tot.push_back(pri[n-1]-f);
-        
-//           int no=tot.size();
-      
-//          for(int i=0;i<no;i++) cout<<tot[i]<<" ";
-//          cout<<endl;
-        
-//         if(no<=k){      
-//            return accumulate(tot.begin(),tot.end(),0);
-//         }
-        
+ 
          c=pri;
         
          memset(dp,-1,sizeof(dp));
         
           int maxpro=0;
-           maxpro=find(0,k,n);
-//           for(int i=0;i<n;i++)
-//           {
-//               maxpro=max(maxpro,dp[i][k]);
-//           } 
+          maxpro=find(0,k,n);
+ 
           
           return maxpro; 
     }
