@@ -10,7 +10,7 @@ public:
             int j=0;
             while(p[j]!=' '){
                 val+=p[j];
-                j++;
+                j++;  
             }      
             j++;   
            while(j<p.length()){
@@ -19,7 +19,7 @@ public:
               while(p[j]!='('){
                  name+=p[j];   
                  j++;
-              }
+              }       
                j++;
               while(p[j]!=')'){
                   temp+=p[j];
