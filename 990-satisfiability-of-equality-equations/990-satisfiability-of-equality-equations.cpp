@@ -1,63 +1,83 @@
 class Solution {
 public:
-    vector<int>size;
-    vector<int>parent;
     
-    int findpar(int ele){
-        if(parent[ele]==ele){
+  
+ class DSU{
+    
+   public: 
+     
+    unordered_map<int,int>par;    
+    unordered_map<int,int>siz;
+    
+    int findpar(int ele){ 
+        if(ele==par[ele]){
             return ele;
         }
-        return parent[ele]=findpar(parent[ele]);
+        return par[ele]=findpar(par[ele]);   
     }
-       
-    void makepar(int fir,int sec)
-    {
-        int par1=findpar(fir),par2=findpar(sec);
-        if(size[par1]<size[par2]){
-            parent[par1]=par2;
-            // size[par2]+=size[par1];
-            // size[par1]=0;
-        }else if(size[par1]>=size[par2]){
-            parent[par2]=par1;
-            // size[par1]+=size[par2];
-            // size[par2]=0;
-        } 
+    
+    void makeuni(int e1,int e2){
+        int p1=findpar(e1);
+        int p2=findpar(e2);
+        
+        if(siz[p1] <= siz[p2]){
+            par[p1]=par[p2]; 
+            siz[p2]+=siz[p1];
+            siz[p1]=0;
+        }else if(siz[p2] < siz[p1]){
+            par[p2]=par[p1];
+            siz[p1]+=siz[p2];
+            siz[p2]=0;
+        }
     }
+ };
+
+    
     bool equationsPossible(vector<string>& eq) {
-         size.resize(27,0);
-         parent.resize(27,0);
-     
-        for(int i=0;i<27;i++){
-            parent[i]=i;
-        }
+         DSU d;
         
-        for(int i=0;i<eq.size();i++){
-            string equat=eq[i];
-            int n1=equat[0]-'a';
-            int n2=equat[3]-'a';
-            char operand=equat[1];
-            if(operand=='='){      
-                makepar(n1,n2);
-            } 
-            
-        }  
+         for(int i=0;i<=26;i++)
+         {
+           d.par[i]=i;
+           d.siz[i]=1;
+         }
+         
+         int n=eq.size();
         
-        for(int i=0;i<eq.size();i++){
-            string equat=eq[i];
-            int n1=equat[0]-'a';
-            int n2=equat[3]-'a'; 
-            char operand=equat[1];
-            if(operand=='!'){   
-               int parn1=findpar(n1);
-               int parn2=findpar(n2);
-                
-                    if(parn1==parn2){
-                         return 0;
-                    } 
-                
-            } 
-            
-        }
-        return 1;
+         for(int i=0;i<n;i++)
+         {
+             int f=(eq[i][0] - 'a');
+             int s=(eq[i][3] - 'a');
+             
+             if(eq[i][1]=='!')
+             {  
+                 int p1=d.findpar(f);
+                 int p2=d.findpar(s); 
+             }else{
+                 d.makeuni(f,s);
+             }
+         }
+        
+        
+         for(int i=0;i<n;i++)
+         {
+             int f=(eq[i][0] - 'a');
+             int s=(eq[i][3] - 'a');
+             
+             if(eq[i][1]=='!')
+             {  
+                 int p1=d.findpar(f);
+                 int p2=d.findpar(s); 
+                 
+                 if(p1==p2) return 0;
+             }else{
+                 int p1=d.findpar(f);
+                 int p2=d.findpar(s); 
+                 
+                 if(p1!=p2) return 0;
+             }
+         }
+         
+        return 1; 
     }
 };
