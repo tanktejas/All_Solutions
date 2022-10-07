@@ -18,13 +18,14 @@ public:
 int max_size = static_cast<int>(pow(10.0, 9)) + 1;
 
 void lazyupdate(Node *node)
-{  
-     
+{   
+     if(node->left){
          node->left->lazy += node->lazy;
          node->right->lazy += node->lazy;
- 
+       
          node->lazy = 0; 
-   
+     }
+     
 }
 
 int update(Node *node, int left, int right, bool state) // update [left,right) with state
@@ -52,6 +53,7 @@ int update(Node *node, int left, int right, bool state) // update [left,right) w
       node->left = new Node(node->start, mid, node->state);
       node->right = new Node(mid, node->end, node->state);
    }  
+    
     
     lazyupdate(node);
     
