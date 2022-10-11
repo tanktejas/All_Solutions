@@ -30,15 +30,6 @@ public:
                 dp[2][i]=min(dp[2][i],nums[i]);
             }  
         }   
-    
-        // for(int i=0;i<=2;i++)
-        // {
-        //     for(int j=0;j<n;j++)
-        //     {
-        //         cout<<dp[i][j]<<" ";
-        //     }
-        //     cout<<endl;
-        // }
         
        return dp[2][n-1]!=1ll*2*INT_MAX;
         
