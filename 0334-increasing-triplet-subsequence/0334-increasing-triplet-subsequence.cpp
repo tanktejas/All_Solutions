@@ -8,30 +8,35 @@ public:
     
     bool increasingTriplet(vector<int>& nums) {
         int n=nums.size();
+          
+        long long onec=min(nums[0],nums[1]),onep=nums[0];
+        long long twoc,twop=1ll*2*INT_MAX;
+        long long threec=1ll*2*INT_MAX,threep=1ll*2*INT_MAX;
         
-        vector<vector<long long>>dp(3,vector<long long>(n,0));
-        
-        dp[0][0]=nums[0];
-        dp[1][0]=1ll*2*INT_MAX;
-        dp[2][0]=1ll*2*INT_MAX;
         for(int i=1;i<n;i++)
-        {
-            dp[0][i]=min(dp[0][i-1],nums[i]);
-            dp[1][i]=dp[1][i-1];
-            dp[2][i]=dp[2][i-1];
+        {  
+            onec=min(onep,nums[i]);
+            twoc=twop;
+            threec=threep;
             
-            if(dp[0][i-1] < nums[i])
+            if(onep < nums[i])
             {
-                dp[1][i]=min(dp[1][i],nums[i]);
+                twoc=min(twoc,nums[i]);
             }
             
-            if(dp[1][i-1] < nums[i])
+            if(twop < nums[i])
             { 
-                dp[2][i]=min(dp[2][i],nums[i]);
-            }  
+                threec=min(threec,nums[i]);
+            }      
+            
+            if(threec != 1ll*2*INT_MAX) return 1;
+            
+            threep=threec;
+            onep=onec;
+            twop=twoc;
         }   
         
-       return dp[2][n-1]!=1ll*2*INT_MAX;
+       return 0;
         
     }
     
