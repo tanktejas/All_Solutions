@@ -44,7 +44,7 @@ public:
              
             // cout<<idx<<"       ";  
             
-            if(!s.empty() and kk!=s.end() and abs(curridx - idx) <= id and (currval - nums[idx]) <= vd) {
+            if(!s.empty() and kk!=s.end() and abs(curridx - idx) <= id ) {
               cout<<curridx<<" "<<idx; 
                 return 1;
             }
@@ -54,7 +54,7 @@ public:
                 kk--;  
                 idx=(*kk);
                 
-                if(abs(curridx - idx) <= id and abs(currval - nums[idx]) <= vd){  
+                if(abs(curridx - idx) <= id){  
                    cout<<curridx<<" "<<idx;   
                     return 1;
                 }  
