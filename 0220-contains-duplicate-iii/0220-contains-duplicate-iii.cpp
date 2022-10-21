@@ -17,24 +17,18 @@ public:
         
         set<int>s;
         s.insert(v[0].second);
-        
-        // for(int i=0;i<n;i++) cout<<v[i].second<<' ';
-          
+         
         while(j<n)
         {
             int curridx=v[j].second;
             int currval=v[j].first;
             
-            // cout<<curridx<<" ";
-            
             while((currval - v[i].first) > vd)
-            { 
-                 // cout<<"delete "<<' ';
+            {  
                  s.erase(v[i].second);
                  i++;
             }
-            
-            // cout<<s.size()<<"   ";
+             
              
             if(!s.empty()){
             
@@ -42,10 +36,8 @@ public:
             
             int idx=(*kk);
              
-            // cout<<idx<<"       ";  
-            
-            if(!s.empty() and kk!=s.end() and abs(curridx - idx) <= id ) {
-              cout<<curridx<<" "<<idx; 
+           
+            if(!s.empty() and kk!=s.end() and abs(curridx - idx) <= id ) { 
                 return 1;
             }
             
@@ -54,13 +46,13 @@ public:
                 kk--;  
                 idx=(*kk);
                 
-                if(abs(curridx - idx) <= id){  
-                   cout<<curridx<<" "<<idx;   
+                if(abs(curridx - idx) <= id){   
                     return 1;
                 }  
             }
             
             }
+            
             s.insert(curridx);
             
             j++;
