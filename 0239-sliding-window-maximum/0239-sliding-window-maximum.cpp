@@ -21,8 +21,7 @@ public:
             {
                 d.pop_front();
             }
-         
-            
+              
             if(i >= (k-1))
                 ans.push_back(nums[d.front()]);   
         }
