@@ -18,11 +18,11 @@ public:
         
         int maxi=0;
         
-        int pela=-1;
+        int pela=0;
         
         for(int i=0;i<n;i++)
         { 
-            maxi=max(maxi,pela+v[i].first+v[i].second+1);
+            maxi=max(maxi,pela+v[i].first+v[i].second);
             pela+=(v[i].second);
         }
          
