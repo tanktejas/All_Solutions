@@ -15,9 +15,7 @@ public:
             while(bo and row!=n)
             {
                 int cr=row,cc=col;
-                if(i==1)
-                   cout<<cr<<" "<<cc<<endl;
-                
+               
                 if((g[row][col]==1 and (col==m-1 or g[row][col+1]==-1)) or (g[row][col]==-1 and (col == 0 or g[row][col-1]==1)))
                 {
                     bo=0;
