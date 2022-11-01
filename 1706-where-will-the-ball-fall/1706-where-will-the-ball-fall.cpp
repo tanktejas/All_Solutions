@@ -33,7 +33,7 @@ public:
             
             if(bo and row==n)
             {
-                ans.push_back(i+(col-i));
+                ans.push_back(col);
             }else{
                 ans.push_back(-1);
             }
