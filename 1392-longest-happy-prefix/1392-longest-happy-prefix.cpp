@@ -8,23 +8,18 @@ public:
         int i=1,j=0;
         
         while(i<n)
-        {   
-           // cout<<i<<' '<<j<<endl;
+        {    
            if(s[j]==s[i])
             { 
                 j++;
                 dp[i]=j;
                 i++;
             }else if(j!=0)
-            { 
-               if(j!=0)
-                  j=dp[j-1]; 
-                
-            }else {
+            {  
+               j=dp[j-1];  
+            }else{
                i++;
            }
-            
-          
             
         }
          
