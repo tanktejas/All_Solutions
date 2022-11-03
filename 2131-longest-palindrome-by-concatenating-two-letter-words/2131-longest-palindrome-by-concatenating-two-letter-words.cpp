@@ -39,7 +39,7 @@ public:
         {
             if(mp[same[i]]==1)
             {
-                cnt+=2; 
+                cnt+=2;    
                 break;
             }
         }
