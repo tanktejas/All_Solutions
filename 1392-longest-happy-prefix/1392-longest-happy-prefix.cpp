@@ -20,7 +20,7 @@ public:
                if(j!=0)
                   j=dp[j-1]; 
                 
-            }else if(j==0){
+            }else {
                i++;
            }
             
