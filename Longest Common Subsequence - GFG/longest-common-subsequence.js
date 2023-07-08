@@ -62,6 +62,10 @@ function main() {
  
 class Solution
 {
+    g(a)
+    {
+        return a;
+    }
     //Function to find the length of longest common subsequence in two strings.
     lcs(x, y, s1, s2)
     {
@@ -71,8 +75,8 @@ class Solution
         {
             arr[i]=new Array(y+1);
         }
-        
-        
+         
+         
         for(let i=0;i<=x;i++)
         {
             arr[i][0]=0;
